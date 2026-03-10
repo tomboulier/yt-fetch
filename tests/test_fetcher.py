@@ -2,8 +2,6 @@
 
 from unittest.mock import MagicMock, patch
 
-import pytest
-
 from yt_fetch.fetcher import extract_video_id, get_metadata, get_transcript
 
 

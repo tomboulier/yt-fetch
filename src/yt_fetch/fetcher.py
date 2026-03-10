@@ -3,12 +3,11 @@
 import json
 import re
 import subprocess
-from typing import Optional
 
 from youtube_transcript_api import YouTubeTranscriptApi
 
 
-def extract_video_id(url: str) -> Optional[str]:
+def extract_video_id(url: str) -> str | None:
     """Extract the YouTube video ID from a URL.
 
     Supports standard, short, embed, and shorts URL formats.
