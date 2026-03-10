@@ -1,0 +1,52 @@
+[project]
+name = "yt-fetch"
+version = "0.1.0"
+description = "Fetch YouTube metadata and transcript as JSON — glue code around yt-dlp and youtube-transcript-api."
+authors = [{ name = "Thomas Boulier", email = "tboulier@chu-grenoble.fr" }]
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["youtube", "transcript", "metadata", "cli"]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "yt-dlp>=2024.1.0",
+    "youtube-transcript-api>=1.0.0",
+]
+
+[project.scripts]
+yt-fetch = "yt_fetch.cli:main"
+
+[project.urls]
+Repository = "https://github.com/tomboulier/yt-fetch"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules"
+testpaths = ["tests", "src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.coverage.run]
+source = ["src"]
