@@ -26,7 +26,7 @@ This is **glue code** between two excellent projects:
 
 The value is in the single-command interface: one URL in, one clean JSON out. Useful for piping into LLMs, note-taking workflows, or any script that needs structured YouTube data.
 
-It was built as part of a personal [Claude Code](https://claude.ai/code) + Obsidian workflow. Published here for personal reference and easy sharing — not as a serious library.
+It was built as part of a personal [Claude Code](https://claude.ai/code) + [Obsidian](https://obsidian.md/) workflow. Published here for personal reference and easy sharing (not as a serious library).
 
 ## Installation
 
