@@ -20,8 +20,7 @@ class TestExtractVideoId:
 
     def test_url_with_extra_params(self):
         assert (
-            extract_video_id("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s")
-            == "dQw4w9WgXcQ"
+            extract_video_id("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s") == "dQw4w9WgXcQ"
         )
 
     def test_invalid_url_returns_none(self):
@@ -63,8 +62,9 @@ class TestGetTranscript:
         assert result == "Bonjour"
 
     def test_returns_error_message_on_failure(self):
-        with patch("yt_fetch.fetcher.YouTubeTranscriptApi", side_effect=Exception("boom"),
-                   create=True):
+        with patch(
+            "yt_fetch.fetcher.YouTubeTranscriptApi", side_effect=Exception("boom"), create=True
+        ):
             result = get_transcript("dQw4w9WgXcQ")
 
         assert result.startswith("[Transcript unavailable:")
